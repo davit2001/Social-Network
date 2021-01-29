@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="logo.png"/>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>ADR Network</title>
+	<link rel="icon" href="images/fav.png" type="image/png" sizes="16x16">
+
+	<script src="../sign_upin.js"></script>
+
+	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/color.css">
+	<link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+	<!--<div class="se-pre-con"></div>-->
+	<div class="theme-layout">
+		<div class="container-fluid pdng0">
+			<div class="row merged">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="land-featurearea">
+						<div class="land-meta">
+							<h1>Arsen David Robert</h1>
+							<p>
+								User regi<a href="/is_admin">s</a>tration page.
+							</p>
+							<div class="friend-logo">
+								<span><img src="images/wink.png" alt=""></span>
+							</div>
+							<!-- <a href="#" title="" class="folow-me">Follow Us on</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="login-reg-bg">
+						<div class="log-reg-area sign">
+							<h2 class="log-title">Login</h2>
+
+							<form method="post">
+								<div class="form-group">
+									<input type="text" id="login" required="required" />
+									<label class="control-label" for="input">Login</label><i class="mtrl-select"></i>
+								</div>
+								<div class="form-group">
+									<input type="password" id="password" required="required" />
+									<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>									
+								</div>
+								<p id="infoLoginUser" style="color:red;"></p>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" checked="checked" /><i class="check-box"></i>Always
+										Remember Me.
+									</label>
+								</div>
+								<!-- <a href="#" title="" class="forgot-pwd">Forgot Password?</a> -->
+								<div class="submit-btns">
+									<button class="mtr-btn signin" onclick="loginUser()" type="button"><span>Login</span></button>
+									<button class="mtr-btn signup" type="button"><span>Register</span></button>
+								</div>
+							</form>
+						</div>
+						<div class="log-reg-area reg">
+							<h2 class="log-title">Register</h2>
+							<form id="registerForm">
+								<div class="form-group">
+									<input id="name" type="text" required="required" />
+									<label class="control-label" for="input">First & Last Name</label><i
+										class="mtrl-select"></i>
+									<p id="infoName" style="color:red;"></p>
+								</div>
+								<div class="form-group">
+									<input id="phoneNumber" type="number" required="required" />
+									<label class="control-label" for="input">Phone Number</label><i
+										class="mtrl-select"></i>
+										<p id="infoPhone" style="color:red;"></p>
+								</div>
+								<div class="form-group">
+									<input id="birth" type="date" required="required" />
+									<label class="control-label" for="input">Birth</label><i class="mtrl-select"></i>
+									<p id="infoBirth" style="color:red;"></p>
+								</div>
+								<div class="form-group">
+									<input id="loginRegist" type="text" required="required" />
+									<label class="control-label" for="input">Login</label><i class="mtrl-select"></i>
+									<p id="infoLogin" style="color:red;"></p>
+								</div>
+								<div class="form-group">
+									<input id="passwordRegist" type="password" required="required" />
+									<label class="control-label" for="input">Password</label><i class="mtrl-select"></i>
+									<p id="infoPassword" style="color:red;"></p>
+								</div>
+
+								<div class="form-radio">
+									<div class="radio">
+										<label>
+											<input id="male" type="radio" name="radio" checked="checked" /><i
+												class="check-box"></i>Male
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input id="female" type="radio" name="radio" /><i
+												class="check-box"></i>Female
+										</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<input id="email" type="text" required="required" />
+									<label class="control-label" for="input"><a
+											href="https://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__"
+											data-cfemail="6c29010d05002c">[email&#160;protected]</a></label><i
+										class="mtrl-select"></i>
+										<button id="getRegistCode" onclick="sendEmail(event)">Get Code</button>
+										<input id="regCode" type="number" placeholder="code">
+										
+									<p id="infoEmail" style="color:red;"></p>
+								</div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" checked="checked" /><i class="check-box"></i>Accept Terms
+										& Conditions ?
+									</label>
+								</div>
+								<a href="#" title="" class="already-have">Already have an account</a>
+								<div class="submit-btns">
+									<button class="mtr-btn signup" onclick="registerUser()"
+										type="button"><span>Register</span></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="js/main.min.js"></script>
+	<script src="js/script.js"></script>
+
+</body>
+
+</html>

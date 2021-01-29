@@ -1,0 +1,104 @@
+<html>
+
+<head></head>
+
+<body>
+    <html>
+
+    <head>
+        <script src="./admin.js"></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a href="/login"><i class="fa fa-home fa-fw"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="/delete_user"><i class="fa fa-list-alt fa-fw"></i>Delete</a>
+                        </li>
+                        <li>
+                            <a href="/update_user"><i class="fa fa-bar-chart-o fa-fw"></i>Update</a>
+                        </li>
+                        <li>
+                            <a href="/all_users"><i class="fa fa-file-o fa-fw"></i>User</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <form id="form"></form>
+
+        <div class="container">
+            <h2>Table of all user</h2>
+            <p>Select and delete:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody" ng-app="myApp" ng-controller="myCtrl">
+
+
+                </tbody>
+            </table>
+            <button class="btn btn-primary" onclick="showUserFriend()" id="showFriend">Show Friend</button>
+            <button class="btn btn-primary" onclick="showUserMessage()" id="showMessage">Show Messages</button>
+
+        </div>
+        <div class="container" id="friends" style="display: none;">
+            <h2>Table of user friends</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody2" ng-app="myApp" ng-controller="myCtrl" >
+                </tbody>
+            </table>
+        </div>
+        <div class="container" id="messages" style="display: none;">
+            <h2>Table of user message</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>To</th>
+                        <th>Text</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody3" ng-app="myApp" ng-controller="myCtrl" >
+                </tbody>
+            </table>
+        </div>
+
+        <style>
+            @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+
+            body {
+                margin-top: 20px;
+            }
+
+            .fa-fw {
+                width: 2em;
+            }
+        </style>
+    </body>
+
+    </html>
+</body>
+
+</html>
