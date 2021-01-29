@@ -22,10 +22,7 @@ io.on('connection', async socket => {
     socket.emit('openChat', { setUser, userId })
   });
 
-  socket.on('Offline', async (userId) => {
-    await updateOnlineToFalse(userId);
-    io.emit('onlineUsers', await onlineUsers());
-  })
+
 
   socket.on('message', async (data) => {
    let user = await findUser(data.from)
@@ -85,7 +82,8 @@ socket.on('new post',async (data)=>{
   
 
   socket.on('disconnect', () => {
-    socket.emit('Offline', UserId)
+    await updateOnlineToFalse(userId);
+    io.emit('onlineUsers', await onlineUsers());
   });
 })
 
