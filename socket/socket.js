@@ -7,11 +7,11 @@ const User = require('../models/user-schema');
 const controlMessage = require("../controller/control_message");
 
 let socketObj = {}
-let UserId = null
+
 io.on('connection', async socket => {
    socket.on('newUser', (userId) => {
-     UserId = userId
-   socketObj[userId] = socket.id;
+    socketObj[userId] = socket.id;
+   socketObj["userId"] = userId;
     updateOnlineToTrue(userId)
   })
 
@@ -22,8 +22,6 @@ io.on('connection', async socket => {
     socket.emit('openChat', { setUser, userId })
   });
 
-
-
   socket.on('message', async (data) => {
    let user = await findUser(data.from)
    io.to(socketObj[data.to]).emit('messagePrivate', { user, data })
@@ -33,9 +31,7 @@ io.on('connection', async socket => {
   socket.on('msgUser', async (msgObj) => {
     io.to(socketObj[msgObj.to]).emit('msgUserBack', await controlMessage.add(msgObj));
   });
-
   
-
   socket.on('friendRequest', async (data) => {
     let { from, to } = data
     let user = await findUser(to)
@@ -55,9 +51,7 @@ socket.on('ConfirmRequest', async (data) => {
   
    io.to(socketObj[to]).emit('ConfirmRequest',user)
 })
-
   
-
 socket.on('new post',async (data)=>{
   console.log(data)
 //   let {id,text} = data
@@ -80,9 +74,8 @@ socket.on('new post',async (data)=>{
  //io.emit('new post',newPost)
 })
   
-
-  socket.on('disconnect', () => {
-    await updateOnlineToFalse(userId);
+  socket.on('disconnect',async () => {
+    await updateOnlineToFalse(socketObj["userId"]);
     io.emit('onlineUsers', await onlineUsers());
   });
 })
