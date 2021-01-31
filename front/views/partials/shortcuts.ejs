@@ -1,0 +1,35 @@
+<div class="widget">
+    <h4 class="widget-title">Shortcuts</h4>
+    <ul class="naves">
+        <li>
+            <i class="ti-clipboard"></i>
+            <a href="/home" title="">News feed</a>
+        </li>
+        <li>
+            <i class="ti-files"></i>
+            <a href="/profile/<%=userId%>" title="">My pages</a>
+        </li>
+        <li id="FriendsButton"> 
+            <i class="ti-user"></i>
+            <a href="/friends" title="">friends</a>
+           <% if (userFirendLength != 0) { %>
+                <span id="FriendsCount"><%=userFirendLength%></span>
+           <% } %>
+        </li>
+
+        <li>
+            <i class="ti-image"></i>
+            <a href="/photos/<%=userId%>" title="">images</a>
+        </li>
+
+        <li>
+            <i class="ti-comments-smiley"></i>
+            <a href="/messages" title="">Messages</a>
+        </li>
+        
+       <li id="Logout">
+            <i class="ti-power-off"></i>
+            <a href="/login" title="">Logout</a>
+        </li>
+    </ul>
+</div>

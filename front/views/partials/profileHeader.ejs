@@ -1,0 +1,60 @@
+<section>
+    <div class="feature-photo">
+        <figure><img src="/images/resources/timeline-1.jpg" alt=""></figure>
+       <% if(userId != userReqParamId) { %>
+         <div class="add-btn">
+            <button id="<%=userReqParamId%>" class="addFriend">Add button</button>
+         </div>
+       <% } %>
+       
+        
+        <div class="container-fluid">
+            <div class="row merged">
+                <div class="col-lg-2 col-sm-3">
+                    <div class="user-avatar">
+                        <figure>
+                            <img id="img" width="230px" height="230px" src="/images/resources/<%=profileImg%>" alt="">
+                            <form class="edit-phto">
+                                <i class="fa fa-camera-retro"></i>
+                                <label class="fileContainer">
+                                    Edit Display Photo
+                                    <input id="imgFile" type="file"/>
+                                </label>
+                            </form>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-sm-9">
+                    <div class="timeline-info">
+                        <ul>
+                            <li class="admin-name">
+                              <h5><%=name%></h5>
+                             </li>
+                            <li>
+                               <a class="active" href="/profile/<%=userReqParamId%>" title="" data-ripple="">Profile</a>
+                                <a class="" href="/photos/<%=userReqParamId%>" title="" data-ripple="">Photos</a>
+                                <% if (userReqParamId == userId) { %>
+                                <a class="" href="/friends" title="" data-ripple="">Friends</a>
+                                <% } %> 
+                                <% if (userReqParamId == userId) { %>
+                                <a class="" href="/about" title="" data-ripple="">about</a>
+                               <% } %> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="showProfilePhoto" hidden>
+    <img id="ProfileImg" width="600px" height="400px" src="" alt="">
+    <div class="profilePhotoButton">
+        <button class="cancelProfilePhoto">cancel</button>
+        <button class="saveProfilePhoto">save</button>
+    </div>
+    
+</div>
+<script src="../upload.js"></script>
+

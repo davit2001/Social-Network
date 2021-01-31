@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <script src="/update-user.js"></script>
+  </head>
+
+  <body>
+    <html>
+      <head>
+        <script src="/admin.js"></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+      </head>
+
+      <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <ul class="nav nav-pills nav-stacked">
+                <li>
+                  <a href="login"><i class="fa fa-home fa-fw"></i>Home</a>
+                </li>
+                <li>
+                  <a href="delete_user.html"
+                    ><i class="fa fa-list-alt fa-fw"></i>Delete</a
+                  >
+                </li>
+                <li>
+                  <a href="update_user.html"
+                    ><i class="fa fa-bar-chart-o fa-fw"></i>Update</a
+                  >
+                </li>
+                <li>
+                  <a href="all_users.html"
+                    ><i class="fa fa-file-o fa-fw"></i>User</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <h2>Table of all user</h2>
+          <p>Select and delete:</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Select</th>
+              </tr>
+            </thead>
+            <tbody id="tbody" ng-app="myApp" ng-controller="myCtrl"></tbody>
+          </table>
+          <button class="btn btn-primary" onclick="openForm()" id="showUpdateForm">
+            Update User</button
+          ><br />
+        </div>
+        <div>
+          <form id="updateUser" style="display: none;">
+            <label>Name</label>
+            <input name="update" id="updateName" required /><br />
+            <label>Email</label>
+            <input name="update" id="updateEmail" required /><br />
+            <label>Phone</label>
+            <input
+              name="update"
+              type="number"
+              id="updatePhone"
+              required
+            /><br />
+            <label>Login</label>
+            <input name="update" id="updateLogin" required /><br />
+            <label>Password</label>
+            <input name="update" id="updatePassword" required /><br />
+            <input
+            type="submit"
+            id="updateBtn"
+            class="btn btn-primary"
+            onclick="updateUser()" 
+          />
+          </form>
+          <p id="updateInfo"></p>
+          
+        </div>
+
+        <style>
+          @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+
+          body {
+            margin-top: 20px;
+          }
+
+          .fa-fw {
+            width: 2em;
+          }
+        </style>
+      </body>
+    </html>
+  </body>
+</html>
