@@ -101,6 +101,7 @@ function ClickDeleteOrConfirm(FriendRequestList) {
                         socket.emit('ConfirmRequest', data.info)
                         alert(data.message)
                         FrendRequestLi[i].remove()
+                        FriendRequestCount.innerHTML = data.friendsCount
                     }
                 })
         })
@@ -123,6 +124,7 @@ function ClickDeleteOrConfirm(FriendRequestList) {
                     if (data.message) {
                         alert(data.message)
                         FrendRequestLi[i].remove()
+                        FriendRequestCount.innerHTML = data.friendsCount
                     }
                 })
         })
